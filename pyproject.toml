@@ -1,0 +1,22 @@
+[project]
+name = "idp-anomaly-detector"
+version = "0.1.0"
+description = "Detect account takeover patterns in identity-provider login logs, mapped to MITRE ATT&CK"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Emil Eminov" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+idp-detect = "detector.cli:main"
+
+[tool.setuptools]
+packages = ["detector"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
